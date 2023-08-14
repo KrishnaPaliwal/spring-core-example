@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="helloWorld" class="com.example.HelloWorld" scope="prototype" init-method="initMethod" destroy-method="destroyMethod">
+		<property name="message" value="Hello, Spring Core!" />
+		<property name="email" value="krishna.paliwal@gmail.com"></property>
+		<property name="helloCity" ref="helloCityBean" />
+	</bean>
+	
+	<bean id="helloCityBean" class="com.example.HelloCity" scope="prototype">
+		<property name="name" value="Indore" />
+	</bean>
+<!-- 
+	<bean id="helloWorld2" class="com.example.HelloWorld" scope="singleton">
+		<property name="message" value="Hello, Spring Core!" />
+		<property name="email" value="krishna.paliwal@gmail.com"></property>
+		<property name="helloCity" ref="helloCityBean" />
+
+	</bean>
+
+-->
+</beans>
